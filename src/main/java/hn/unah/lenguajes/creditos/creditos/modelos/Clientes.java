@@ -2,6 +2,7 @@ package hn.unah.lenguajes.creditos.creditos.modelos;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -23,7 +24,7 @@ public class Clientes {
     private String telefono;
 
     @OneToMany(mappedBy = "dni", cascade = CascadeType.ALL)
-    private List<Prestamos> cursos;
+    private List<Prestamos> prestamo;
 
     
 }
