@@ -23,7 +23,7 @@ public class Clientes {
 
     private String telefono;
 
-    @OneToMany(mappedBy = "dni", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Prestamos> prestamo;
 
     

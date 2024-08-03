@@ -39,7 +39,7 @@ public class Prestamos {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "codigoprestamo", referencedColumnName = "dni")
-    private Clientes dni;
+    private Clientes cliente;
 
     
 }

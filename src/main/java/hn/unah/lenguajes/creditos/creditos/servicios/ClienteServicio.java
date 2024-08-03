@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hn.unah.lenguajes.creditos.creditos.modelos.Clientes;
+import hn.unah.lenguajes.creditos.creditos.modelos.Prestamos;
 import hn.unah.lenguajes.creditos.creditos.repositorios.ClienteRepositorio;
 
 @Service
@@ -21,8 +22,17 @@ public class ClienteServicio {
     public Clientes nuevoCliente(Clientes nuevoCliente){
 
         if(this.clienteRepositorio.existsById(nuevoCliente.getDni())){
-            
+            return null;
         }
+
+        List<Prestamos> prestamo = nuevoCliente.getPrestamo();
+        if (prestamo != null){
+            for (Prestamos presta : prestamo) {
+                presta.setCliente(nuevoCliente);
+            }
+        }
+
+
         return nuevoCliente;
     }
     
